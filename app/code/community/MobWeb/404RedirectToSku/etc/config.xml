@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * @author    Louis Bataillard <info@mobweb.ch>
+ * @package    MobWeb_404RedirectToSku
+ * @copyright    Copyright (c) MobWeb GmbH (https://mobweb.ch)
+ */
+-->
+<config>
+    <modules>
+        <MobWeb_404RedirectToSku>
+            <version>1.0.0</version>
+        </MobWeb_404RedirectToSku>
+    </modules>
+    <global>
+        <models>
+            <mobweb_404redirecttosku>
+                <class>MobWeb_404RedirectToSku_Model</class>
+            </mobweb_404redirecttosku>
+        </models>
+        <events>
+            <controller_action_predispatch_cms_index_noRoute>
+                <observers>
+                    <mobweb_404redirecttosku_controller_action_predispatch_cms_index_noRoute>
+                        <type>singleton</type>
+                        <class>mobweb_404redirecttosku/observer</class>
+                        <method>controllerActionPredispatchCmsIndexNoRoute</method>
+                    </mobweb_404redirecttosku_controller_action_predispatch_cms_index_noRoute>
+                </observers>
+            </controller_action_predispatch_cms_index_noRoute>
+        </events>
+    </global>
+ </config>
