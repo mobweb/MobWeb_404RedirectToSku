@@ -27,12 +27,12 @@ class MobWeb_404RedirectToSku_Model_Observer
                 if ($productHelper->canShow($product)) {
 
                     // Get the product's URL
-                    $productUrlKey = $product->getUrlKey();
+                    $productUrlKey = $product->getProductUrl();
                     if ($productUrlKey) {
 
                         // Send the redirect to the full URL
                         header('HTTP/1.1 301 Moved Permanently'); 
-                        header('Location: ' . Mage::getUrl($productUrlKey)); 
+                        header('Location: ' . $productUrlKey); 
                         exit();
                     }
                 }
